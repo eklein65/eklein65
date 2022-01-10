@@ -26,7 +26,7 @@ def setup():
     for ledPin in ledPins:
         GPIO.setmode(GPIO.BOARD)  # use PHYSICAL GPIO Numbering
         GPIO.setup(int(ledPin), GPIO.OUT)  # set the ledPin to OUTPUT mode
-        GPIO.output(ledPin, GPIO.LOW)  # make ledPin output LOW level
+        GPIO.output(int(ledPin), GPIO.LOW)  # make ledPin output LOW level
         print('using pin%d as led' % ledPin)
     for buttonPin in buttonPins:
         GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
@@ -36,12 +36,12 @@ def setup():
 def loop():
     while True:
         for ledPin in ledPins:
-            GPIO.output(ledPin, GPIO.HIGH)  # make ledPin output HIGH level to turn on led
+            GPIO.output(int(ledPin), GPIO.HIGH)  # make ledPin output HIGH level to turn on led
             print('led turned on >>>')  # print information on terminal
 
         time.sleep(1)  # Wait for 1 second
         for ledPin in ledPins:
-            GPIO.output(ledPin, GPIO.LOW)  # make ledPin output LOW level to turn off led
+            GPIO.output(int(ledPin), GPIO.LOW)  # make ledPin output LOW level to turn off led
             print('led turned off <<<')
         time.sleep(1)  # Wait for 1 second
 
