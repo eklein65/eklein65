@@ -50,7 +50,7 @@ def whackamole():
     min = 0
     max = 2
 
-    while true:
+    while True:
         randLedOn(random.uniform(min, max))
 
 
