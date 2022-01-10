@@ -21,7 +21,7 @@ buttonPins = array([buttonPin1, buttonPin2, buttonPin3])
 
 score = 0
 
-def setup(ledPin):
+def setup():
     for ledPin in ledPins:
         GPIO.setmode(GPIO.BOARD)  # use PHYSICAL GPIO Numbering
         GPIO.setup(ledPin, GPIO.OUT)  # set the ledPin to OUTPUT mode
