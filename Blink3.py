@@ -29,7 +29,7 @@ def setup():
         GPIO.output(int(ledPin), GPIO.LOW)  # make ledPin output LOW level
         print('using pin%d as led' % ledPin)
     for buttonPin in buttonPins:
-        GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+        GPIO.setup(int(buttonPin), GPIO.IN, pull_up_down=GPIO.PUD_UP)
         print('using pin%d as button' % ledPin)
 
 
@@ -67,8 +67,8 @@ def randLedOn(sec):
     timeout_start = time.time()
 
     while time.time() < timeout_start + timeout:
-        if GPIO.input(buttonPin) == GPIO.LOW:  # If button pressed in time,
-            GPIO.output(ledPin, GPIO.LOW)
+        if GPIO.input(int(buttonPin)) == GPIO.LOW:  # If button pressed in time,
+            GPIO.output(int(ledPin), GPIO.LOW)
             score += 1
             break
 
