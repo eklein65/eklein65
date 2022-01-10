@@ -59,7 +59,7 @@ def randLedOn(sec):
     index = random.randint(0, len(ledPins) - 1)
     ledPin = ledPins[index]
     buttonPin = buttonPins[index]
-    GPIO.output(ledPin, GPIO.HIGH)  # make ledPin output HIGH level to turn on led
+    GPIO.output(int(ledPin), GPIO.HIGH)  # make ledPin output HIGH level to turn on led
     print('led turned on >>>')
 
     timeout = sec  # [seconds]
